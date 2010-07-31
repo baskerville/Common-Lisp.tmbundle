@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List</string>
+	<key>scope</key>
+	<string>entity.name.function.misc.lisp, entity.name.function.io.lisp, entity.name.function.predicate.lisp</string>
+	<key>settings</key>
+	<dict>
+		<key>showInSymbolList</key>
+		<integer>0</integer>
+	</dict>
+	<key>uuid</key>
+	<string>8C082173-7BE4-4916-A2D5-FF63BE04ACF9</string>
+</dict>
+</plist>

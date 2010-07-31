@@ -1,0 +1,14 @@
+#!/usr/bin/env osascript
+
+on run argv
+	set APP_LABEL to "Terminal"
+	set MSG_LABEL to "Notification"
+	tell application "GrowlHelperApp"
+		set the allNotificationsList to {MSG_LABEL}
+		set the enabledNotificationsList to allNotificationsList
+		register as application APP_LABEL all notifications allNotificationsList default notifications enabledNotificationsList icon of application APP_LABEL
+		repeat with msg in argv 
+			notify with name MSG_LABEL title APP_LABEL description msg application name APP_LABEL
+		end repeat
+	end tell
+end run

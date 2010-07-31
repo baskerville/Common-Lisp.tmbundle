@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completion</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>settings</key>
+	<dict>
+		<key>completionCommand</key>
+		<string>cat "$HOME/$CL_HOME_COMPLETIONS" | grep -i "^$TM_CURRENT_WORD" | sort</string>
+	</dict>
+	<key>uuid</key>
+	<string>1AFA1A8A-06E7-4568-AB92-370A55E643C6</string>
+</dict>
+</plist>

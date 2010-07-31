@@ -1,0 +1,10 @@
+#!/usr/bin/env perl
+
+use strict;
+
+while (<>) {
+    if (/\([^(\s]*\s*\S/) {
+		print ((length $&) - 1);
+		last;
+    }
+}

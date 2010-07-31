@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>selectBlock:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>moveRight:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^}</string>
+	<key>name</key>
+	<string>Step Out Right</string>
+	<key>scope</key>
+	<string>meta.list.lisp</string>
+	<key>uuid</key>
+	<string>B0C44D83-124B-42CB-85ED-48CFC28C3D0F</string>
+</dict>
+</plist>

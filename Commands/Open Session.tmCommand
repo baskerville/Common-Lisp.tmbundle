@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>ACTIVE_SESSIONS=`tmux list-sessions | grep "$CL_SESSION_NAME"`
+
+if [ -z "$ACTIVE_SESSIONS" ]
+then
+	CL="sbcl --noinform --sysinit \"$TM_BUNDLE_PATH/Support/$CL_SYSINIT\""
+	if [ -n "$TM_CL" ]; then CL=$TM_CL; fi
+	tmux new-session -d -s $CL_SESSION_NAME "rlwrap -r -b '()' -m '¬' -i -f \"$TM_BUNDLE_PATH/Support/$CL_COMPLETIONS\" $CL"
+	TMP="$HOME/$CL_BUFFER"
+	
+	echo '{"Connected"}' &gt; "$TMP"
+	
+	tmux load-buffer -t $CL_SESSION_NAME "$TMP"
+	tmux paste-buffer
+else
+	growl "Session already opened…"
+fi</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^@O</string>
+	<key>name</key>
+	<string>Open Session</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>A97A8F36-3B73-4239-A4A4-4C898235CC6E</string>
+</dict>
+</plist>

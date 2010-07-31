@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>selectCurrentScope:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>deleteBackward:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^@B</string>
+	<key>name</key>
+	<string>Kill Current Scope</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>9E23186F-4BEB-4973-A46D-F3CE26A6B52C</string>
+</dict>
+</plist>

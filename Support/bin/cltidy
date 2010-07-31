@@ -1,0 +1,7 @@
+#!/usr/bin/env sbcl --script
+
+(let ((*print-case* :downcase))
+  (do ((form #1=(read nil nil :eof) #1#))
+      ((eql form :eof))
+    (pprint form)
+    (terpri)))

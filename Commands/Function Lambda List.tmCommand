@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>read SYMBOL
+
+if [ -n "$SYMBOL" ]
+then
+cldescr "$SYMBOL" | clll
+fi</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^$ </string>
+	<key>name</key>
+	<string>Function Lambda List</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>BA2EB1A9-6780-4DC5-B1F0-966385F0904E</string>
+</dict>
+</plist>

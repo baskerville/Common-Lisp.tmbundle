@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>if [[ ! -f "$TM_NEW_FILE" ]]; then
+   TM_DATE=`date "+%Y-%m-%d %H:%M:%S" ` \
+   perl -pe 's/\$\{([^}]*)\}/$ENV{$1}/g' \
+      &lt; sketch &gt; "$TM_NEW_FILE"
+fi</string>
+	<key>extension</key>
+	<string>lisp</string>
+	<key>keyEquivalent</key>
+	<string>^~@n</string>
+	<key>name</key>
+	<string>Sketch</string>
+	<key>uuid</key>
+	<string>FDB84346-9487-48F6-A2A3-6608471C29C8</string>
+</dict>
+</plist>

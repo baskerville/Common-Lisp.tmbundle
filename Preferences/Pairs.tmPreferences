@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Pairs</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>settings</key>
+	<dict>
+		<key>highlightPairs</key>
+		<array>
+			<array>
+				<string>(</string>
+				<string>)</string>
+			</array>
+		</array>
+		<key>smartTypingPairs</key>
+		<array>
+			<array>
+				<string>(</string>
+				<string>)</string>
+			</array>
+			<array>
+				<string>"</string>
+				<string>"</string>
+			</array>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>3C291A9A-3CBA-4450-97A5-CA4A191C28A1</string>
+</dict>
+</plist>

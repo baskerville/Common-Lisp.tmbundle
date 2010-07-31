@@ -1,0 +1,62 @@
+#!/usr/bin/env sbcl --script
+
+(defparameter *indent-schemata*
+  '((defun (3))
+    (lambda . defun)
+    (do (3))
+    (do* . do)
+    (dotimes (2))
+    (dolist . dotimes)
+    (let (2))
+    (let* . let)
+    (progn (1))
+    (defvar (2))
+    (defconstant . defvar)
+    (defparameter . defvar)
+    (when (2))
+    (unless . when)
+    (flet (2) (1s0 t 2))
+    (labels . flet)
+    (macrolet . flet)
+    (multiple-value-bind (3))))
+
+(defun nlastbut-one (lst)
+  (car (last (nbutlast lst))))
+
+(defun position-matchp (i1 i2)
+  (if (numberp i2)
+      (if (floatp i2)
+          (= i1 i2)
+          (>= i1 i2))
+      i2))
+
+(defun path-matchp (p1 p2)
+  (if (or (null p1) (null p2))
+      t
+      (let ((i1 (car p1)) (i2 (car p2)))
+        (and (position-matchp i1 i2)
+             (path-matchp (cdr p1) (cdr p2))))))
+
+(defun good-matchp (p1 p2)
+  (and (= (length p1) (length p2))
+       (path-matchp p1 p2)))
+
+(defun find-match (p s)
+  (if (listp s)
+      (find p s :test #'good-matchp)
+      (find-match p (cdr (assoc s *indent-schemata*)))))
+
+(princ (do* ((previous ' form)
+             (form #1=(read nil nil nil) #1#)                                            
+             (path (list #2=(and (listp form) (position previous form :test #'equal))) (cons #2# path)))    
+            ((or (null form) (null (car path))) (if (or (not (listp form))
+                                                        (find `',previous form :test #'equal))
+                                                    1
+                                                    'N))
+         (let ((fn (car form)))                                                  
+           (if (symbolp fn)                                                      
+               (let ((pair (assoc fn *indent-schemata*)))                        
+                 (if pair                                                        
+                     (let ((fm (find-match path (cdr pair))))                    
+                       (if fm                                                    
+                           (return 2)))))))))

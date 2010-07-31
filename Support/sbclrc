@@ -1,0 +1,32 @@
+;;; -*- mode: lisp -*-
+
+(defmacro pipe-string-to-program (program str)
+  `(let ((sis (make-string-input-stream ,str)))
+     (run-program "/bin/bash" '("-c" ,program) :input sis)))
+
+(defmacro pipe-output-to-program (program form)
+  `(let ((output (with-output-to-string (*standard-output*) ,form)))
+     (let ((sis (make-string-input-stream output)))
+       (run-program "/bin/bash" '("-c" ,program) :input sis))))
+
+(defun format-last-result ()
+  (format nil "~{~a~^~%~}" /))
+
+(defmacro with-output-to-growl (forms)
+  `(let* ((global-output (make-string-output-stream))
+          (*standard-output* global-output)
+          (*error-output* global-output)
+          (*trace-output* global-output))
+     (let ((last-result (multiple-value-list (progn ,@forms))))
+       (format global-output "~&~{~a~^~%~}" last-result)
+       (pipe-string-to-program "clgrowl"
+                               (get-output-stream-string global-output))
+       (values-list last-result))))
+  
+(defun growl-progn (strm chr)
+  (declare (ignore chr))
+  (let ((growl-call (list 'with-output-to-growl (read-delimited-list #\} strm t))))
+    growl-call))
+
+(set-macro-character #\{ #'growl-progn) 
+(set-macro-character #\} (get-macro-character #\)))

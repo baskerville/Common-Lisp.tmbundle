@@ -1,0 +1,48 @@
+#!/usr/bin/env perl -w
+
+use strict;
+
+my $cl_sys = "$ENV{'HOME'}/.cl/sys";
+my $symbol;
+
+while (<>) {
+    if (/^([^()]+) names /i) {
+        $symbol = lc $1;
+        # print "$symbol\n";
+    }
+    elsif (/source file: (sys:([^;]+);)?(.*\.lisp)/i) {
+        ( my $from_sys, my $sys_child, my $src_path ) = ( $1, $2, $3 );
+        my $long_path;
+
+        if ( $from_sys and $src_path ) {
+            $src_path =~ tr/;/\//;
+            $long_path = lc "$cl_sys/$sys_child/$src_path";
+        }
+        elsif ($src_path) {
+            $long_path = $src_path;
+        }
+
+        if ( -e $long_path ) {
+            &txmt_open( $long_path, $symbol );
+        }
+        else {
+            # print "!!! path: $long_path \n";
+        }
+    }
+}
+
+sub txmt_open {
+    ( my $where, my $what ) = @_;
+    if ( $where and $what ) {
+        $what =~ s/([*+])/\\$1/g;
+        my $line =
+          `cat "$where" | grep -m 1 -nE "\\(def.+ $what([[:space:])]|\$)"`;
+        if ( $line =~ s/^(\d+).*$/$1/ ) {
+            system("open txmt://open/?url=file://\"$where\"\\&line=$line");
+        }
+        else {
+            # print "!!! line: $line\n";
+            system("open txmt://open/?url=file://\"$where\"");
+        }
+    }
+}  

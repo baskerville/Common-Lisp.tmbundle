@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>tmux list-clients | grep "$CL_SESSION_NAME" | awk -F : '{print $1}' | xargs -I % tmux detach-client -t %</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^@&lt;</string>
+	<key>name</key>
+	<string>Detach from Session</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>DA68016A-B313-44EF-A680-CEC7585C04FD</string>
+</dict>
+</plist>

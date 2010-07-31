@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>selectBlock:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>deleteBackward:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^@K</string>
+	<key>name</key>
+	<string>Kill Current Block</string>
+	<key>scope</key>
+	<string>meta.list.lisp</string>
+	<key>uuid</key>
+	<string>1B04B6F8-16B4-4FF0-B61B-285F1CEECCA7</string>
+</dict>
+</plist>

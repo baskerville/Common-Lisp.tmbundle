@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>ACTIVE_SESSIONS=`tmux list-sessions | grep "$CL_SESSION_NAME"`
+
+if [ -n "$ACTIVE_SESSIONS" ]
+then
+	tmux kill-session -t "$CL_SESSION_NAME"
+	growl "Sayonara!"
+else
+	growl "Nothing to Kill…"
+fi
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^@^</string>
+	<key>name</key>
+	<string>Kill Session</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>E5E50719-633D-4128-8062-C4AC0A8726A9</string>
+</dict>
+</plist>

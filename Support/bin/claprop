@@ -1,0 +1,3 @@
+#!/usr/bin/env sbcl --script
+
+(apropos (read-from-string (second *posix-argv*)))

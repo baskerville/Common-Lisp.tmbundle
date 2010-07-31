@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>SESSION_STARTED=`tmux list-sessions | grep "$CL_SESSION_NAME"`
+
+if [ -n "$SESSION_STARTED" ]
+then
+osascript -e "tell application \"iTerm\"
+				activate
+				set myterm to (make new terminal)
+				tell myterm
+					launch session \"Lisp Interaction\"
+					tell last session
+						write text \"tmux attach-session -t $CL_SESSION_NAME\"
+					end tell
+				end tell
+			end tell"
+
+else
+	growl "No server to attach to…"
+fi</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^@&gt;</string>
+	<key>name</key>
+	<string>Attach to Session</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>6910FCB1-6396-40B9-927B-DBE303034E38</string>
+</dict>
+</plist>

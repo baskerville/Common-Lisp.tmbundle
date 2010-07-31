@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Misc</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>settings</key>
+	<dict>
+		<key>shellVariables</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_START</string>
+				<key>value</key>
+				<string>; </string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_START_2</string>
+				<key>value</key>
+				<string>#|</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_END_2</string>
+				<key>value</key>
+				<string>|#</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_SESSION_NAME</string>
+				<key>value</key>
+				<string>lisp</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_BUFFER</string>
+				<key>value</key>
+				<string>.cl_buffer</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_SELECTION_HISTORY</string>
+				<key>value</key>
+				<string>.cl_selection_history</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_COMPLETIONS</string>
+				<key>value</key>
+				<string>sbcl_completions</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_HOME_COMPLETIONS</string>
+				<key>value</key>
+				<string>.sbcl_completions</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>CL_SYSINIT</string>
+				<key>value</key>
+				<string>sbclrc</string>
+			</dict>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>77480C78-862C-4D4C-9839-ABAE1D34887A</string>
+</dict>
+</plist>

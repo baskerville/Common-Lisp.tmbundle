@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>read SYMBOL
+. "${TM_SUPPORT_PATH}/lib/webpreview.sh"
+
+html_header 'HyperSpec Documentation'
+
+clhyper --path $SYMBOL | xargs -I % wget -q -O - % | awk '/&lt;HR&gt;/,/&lt;\/UL&gt;&lt;HR&gt;/' | sed 's/^&lt;HR&gt;//' | sed 's/&lt;HR&gt;$//'
+
+html_footer</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^h</string>
+	<key>name</key>
+	<string>Documentation for Word</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.lisp</string>
+	<key>uuid</key>
+	<string>19719D1F-0A81-4B63-A3AC-DDA47917BA33</string>
+</dict>
+</plist>

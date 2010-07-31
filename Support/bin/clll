@@ -1,0 +1,29 @@
+#!/usr/bin/env perl
+
+use strict;
+
+my $start_recording = 0;
+my $lambda_list;
+
+while (<>) {
+	if (/Lambda-list:/) {
+		$start_recording = 1;
+		$lambda_list .= $_;
+	} elsif ($start_recording) {
+		if (/^\s{2}\S/) {
+			$start_recording = 0;
+		} else {
+			$lambda_list .= $_;
+		}
+	}
+}
+
+$lambda_list = lc $lambda_list;
+$lambda_list =~ s/lambda-list://;
+$lambda_list =~ s/\n/ /g;
+$lambda_list =~ s/\s+/ /g;
+$lambda_list =~ s/&(whole|environment)\s+\S+\s+//g;
+$lambda_list =~ s/^\s+//;
+$lambda_list =~ s/\s+$//;
+
+print $lambda_list;
