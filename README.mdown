@@ -11,7 +11,7 @@
 
 ## Manual Steps
 	
-Needed by the *completionCommand*:
+Needed by *completionCommand* :
 
 	ln -s ~/Library/Application\ Support/TextMate/Bundles/Common\ Lisp.tmbundle/Support/sbcl_completions ~/.sbcl_completions
 
