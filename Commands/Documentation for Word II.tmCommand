@@ -10,22 +10,20 @@
 
 html_header 'HyperSpec Documentation'
 
-clhyper --path --local $SYMBOL | xargs cat | awk '/&lt;HR&gt;/,/&lt;\/UL&gt;&lt;HR&gt;/' | sed 's/^&lt;HR&gt;//' | sed 's/&lt;HR&gt;$//'
+clhyper --path $SYMBOL | xargs -I % wget -q -O - % | awk '/&lt;HR&gt;/,/&lt;\/UL&gt;&lt;HR&gt;/' | sed 's/^&lt;HR&gt;//' | sed 's/&lt;HR&gt;$//'
 
 html_footer</string>
 	<key>fallbackInput</key>
-	<string>line</string>
+	<string>word</string>
 	<key>input</key>
 	<string>selection</string>
-	<key>keyEquivalent</key>
-	<string>^h</string>
 	<key>name</key>
-	<string>Documentation for Word</string>
+	<string>Documentation for Word II</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
-	<string>820BC127-CAD6-4716-9F2E-8FEAD2C6D42F</string>
+	<string>19719D1F-0A81-4B63-A3AC-DDA47917BA33</string>
 </dict>
 </plist>

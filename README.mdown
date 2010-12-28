@@ -2,11 +2,11 @@
 
 ## Requirements
 
-* tmux 1.2 (not 1.3)
+* tmux
 * rlwrap
-* [SBCL](http://www.sbcl.org/) (not a precompiled binary)
+* [SBCL](http://www.sbcl.org/)
 * [Growl](http://growl.info/)
-* [iTerm](http://iterm.sourceforge.net/)
+* [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://code.google.com/p/iterm2/)
 * [Flexible Words TextMate Plugin](http://github.com/baskerville/Flexible-Words-TextMate)
 
 ## Manual Steps
@@ -16,7 +16,7 @@ Needed by *completionCommand* :
 	ln -s ~/Library/Application\ Support/TextMate/Bundles/Common\ Lisp.tmbundle/Support/sbcl_completions ~/.sbcl_completions
 
 The *Grab Source* command needs the *src* and *contrib* folders of the sbcl sources to be present in *~/.cl/sys*.  
-The *Local Documentation* command looks in *~/.cl/doc/[hyperspec][hys]*.  
+The *Documentation for Word* command looks in *~/.cl/doc/[hyperspec][hys]*.  
 You can add a *--local* argument to *cldoc* if *~/.cl/doc/[cltl2][cl2]* exists. 
  
 [cl2]: http://www.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/lang/lisp/doc/cltl/cltl_ht.tgz
@@ -24,5 +24,6 @@ You can add a *--local* argument to *cldoc* if *~/.cl/doc/[cltl2][cl2]* exists.
 
 ## Tips
 
+You can't interact with your Lisp interpreter unless you start a session (Control-Command-Shift-O by default).
 A short presentation is available [here](http://www.vimeo.com/13780133).  
 I've also made a lispy theme: [Coal Graal](http://github.com/baskerville/Coal-Graal.tmTheme).

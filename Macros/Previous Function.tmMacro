@@ -35,7 +35,7 @@
 		</dict>
 	</array>
 	<key>keyEquivalent</key>
-	<string>^@{</string>
+	<string>^@(</string>
 	<key>name</key>
 	<string>Previous Function</string>
 	<key>scope</key>

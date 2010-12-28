@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>read SYMBOL
 
-clhyper $SYMBOL</string>
+clhyper --local $SYMBOL</string>
 	<key>fallbackInput</key>
 	<string>word</string>
 	<key>input</key>

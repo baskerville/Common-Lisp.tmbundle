@@ -14,7 +14,7 @@
 		</dict>
 	</array>
 	<key>keyEquivalent</key>
-	<string>^{</string>
+	<string>^[</string>
 	<key>name</key>
 	<string>Step Out Left</string>
 	<key>scope</key>
