@@ -17,13 +17,13 @@ Needed by *completionCommand* :
 
 The *Grab Source* command needs the *src* and *contrib* folders of the sbcl sources to be present in *~/.cl/sys*.  
 The *Documentation for Word* command looks in *~/.cl/doc/[hyperspec][hys]*.  
-You can add a *--local* argument to *cldoc* if *~/.cl/doc/[cltl2][cl2]* exists. 
- 
+You can add a *--local* argument to *cldoc* if *~/.cl/doc/[cltl2][cl2]* exists.
+
 [cl2]: http://www.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/lang/lisp/doc/cltl/cltl_ht.tgz
 [hys]: ftp://ftp.lispworks.com/pub/software_tools/reference/HyperSpec-7-0.tar.gz
 
 ## Tips
 
-You can't interact with your Lisp interpreter unless you start a session (Control-Command-Shift-O by default). 
+You can't interact with your Lisp interpreter unless you start a session (Control-Command-Shift-O by default).  
 A short presentation is available [here](http://www.vimeo.com/13780133).  
 I've also made a lispy theme: [Coal Graal](http://github.com/baskerville/Coal-Graal.tmTheme).
