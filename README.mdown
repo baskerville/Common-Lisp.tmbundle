@@ -24,6 +24,6 @@ You can add a *--local* argument to *cldoc* if *~/.cl/doc/[cltl2][cl2]* exists.
 
 ## Tips
 
-You can't interact with your Lisp interpreter unless you start a session (Control-Command-Shift-O by default).
+You can't interact with your Lisp interpreter unless you start a session (Control-Command-Shift-O by default). 
 A short presentation is available [here](http://www.vimeo.com/13780133).  
 I've also made a lispy theme: [Coal Graal](http://github.com/baskerville/Coal-Graal.tmTheme).
