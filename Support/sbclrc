@@ -17,7 +17,7 @@
           (*standard-output* global-output)
           (*error-output* global-output)
           (*trace-output* global-output))
-     (let ((last-result (multiple-value-list (progn ,@forms))))
+     (let ((last-result (multiple-value-list (ignore-errors ,@forms))))
        (format global-output "~&~{~a~^~%~}" last-result)
        (pipe-string-to-program "clgrowl"
                                (get-output-stream-string global-output))
