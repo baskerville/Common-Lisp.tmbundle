@@ -11,9 +11,14 @@ if [ -n "$SESSION_STARTED" ]
 then
 osascript -e "tell application \"iTerm\"
 				activate
-				set myterm to (make new terminal)
-				tell myterm
-					launch session \"Lisp Interaction\"
+				if ((count of every terminal) is greater than 0) then
+					set myTerminal to last terminal
+				else
+					set myTerminal to (make new terminal)
+				end if
+
+				tell myTerminal
+					launch session \"Default\"
 					tell last session
 						write text \"tmux attach-session -t $CL_SESSION_NAME\"
 					end tell
