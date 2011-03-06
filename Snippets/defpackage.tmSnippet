@@ -4,8 +4,10 @@
 <dict>
 	<key>content</key>
 	<string>(defpackage :$1
-  :use :cl $2
-  :export :$3)
+  (:use :cl $2)
+  (:export :$3))
+
+(in-package :$1)
 
 $0</string>
 	<key>name</key>
