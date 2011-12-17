@@ -18,6 +18,7 @@ Bastien Flexible Words plugin. Probably you won't be able to use all the code in
 ## Manual Steps
 
 You NEED to add these environment variable to your TM2 installation "Preferences -> Environment Variables":
+
 * TM_TMUX : <tmux_path>, for example /usr/local/bin/tmux
 * TM_SBCL : <sbcl_path>, for example /usr/local/bin/sbcl
 * TM_RLWRAP : <rlwrap_path>, for example /user/local/bin/rlwrap
