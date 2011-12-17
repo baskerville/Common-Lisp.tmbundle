@@ -5,18 +5,29 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>tmux list-clients | grep "$CL_SESSION_NAME" | awk -F : '{print $1}' | xargs -I % tmux detach-client -t %</string>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+${TM_TMUX} list-clients | grep "$CL_SESSION_NAME" | awk -F : '{print $1}' | xargs -I % ${TM_TMUX} detach-client -t %</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^@&lt;</string>
 	<key>name</key>
 	<string>Detach from Session</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
 	<string>DA68016A-B313-44EF-A680-CEC7585C04FD</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

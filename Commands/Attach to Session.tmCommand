@@ -5,7 +5,12 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>SESSION_STARTED=`tmux list-sessions | grep "$CL_SESSION_NAME"`
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+
+CL_SESSION_NAME="lisp"
+SESSION_STARTED=`"${TM_TMUX}" list-sessions | grep $CL_SESSION_NAME`
 
 if [ -n "$SESSION_STARTED" ]
 then
@@ -20,25 +25,33 @@ osascript -e "tell application \"iTerm\"
 				tell myTerminal
 					launch session \"Default\"
 					tell last session
-						write text \"tmux attach-session -t $CL_SESSION_NAME\"
+						write text \"${TM_TMUX} attach-session -t $CL_SESSION_NAME\"
 					end tell
 				end tell
 			end tell"
-
+			growl "Attached!"
 else
 	growl "No server to attach to…"
 fi</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^@&gt;</string>
 	<key>name</key>
 	<string>Attach to Session</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
 	<string>6910FCB1-6396-40B9-927B-DBE303034E38</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
