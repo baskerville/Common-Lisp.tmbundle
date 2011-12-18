@@ -8,11 +8,11 @@ Bastien Flexible Words plugin. Probably you won't be able to use all the code in
 
 ## Requirements
 
-* tmux <=1.4 (tmux 1.5 is not supported for now, I've contacted the tmux user group)
+* tmux
 * rlwrap
 * [SBCL](http://www.sbcl.org/)
 * [Growl](http://growl.info/)
-* [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://code.google.com/p/iterm2/)
+* [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://www.iterm2.com/)
 * [Flexible Words TextMate Plugin](http://github.com/baskerville/Flexible-Words-TextMate)
 
 ## Manual Steps
