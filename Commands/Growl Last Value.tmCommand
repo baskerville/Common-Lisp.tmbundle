@@ -12,8 +12,17 @@ TMP="$HOME/$CL_BUFFER"
 
 echo "{/}" &gt; "$TMP"
 
-${TM_TMUX} load-buffer -t $CL_SESSION_NAME "$TMP"
-${TM_TMUX} paste-buffer</string>
+#Backward Compatibility for Tmux &lt;= 1.4
+TMUX_VERSION=`"${TM_TMUX}" -V`
+if [ "$TMUX_VERSION" &gt; "tmux 1.4" ]
+then
+	${TM_TMUX} load-buffer "$TMP"
+	${TM_TMUX} paste-buffer	
+else
+	${TM_TMUX} load-buffer -t $CL_SESSION_NAME "$TMP"
+	${TM_TMUX} paste-buffer
+fi
+</string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
