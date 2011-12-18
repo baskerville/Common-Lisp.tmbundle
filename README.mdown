@@ -1,6 +1,6 @@
 # Common Lisp TextMate Bundle
 
-![Screen 1](imgs/screen1.png)
+![Screen 1](screen1.png)
 
 This is a slightly enhancement to the fantastic Common Lisp Bundle, originary written by Bastien Dejean.
 It supports Textmate 2, so you can code with your favourite editor and your favourite programming language :)
