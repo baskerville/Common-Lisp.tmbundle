@@ -5,25 +5,45 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>TMP="$HOME/$CL_BUFFER"
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+TMP="$HOME/$CL_BUFFER"
 
 echo -n "" &gt; "$TMP"
 
-tmux load-buffer -t $CL_SESSION_NAME "$TMP"
-tmux paste-buffer</string>
+#Backward Compatibility for Tmux &lt;= 1.4
+TMUX_VERSION=`"${TM_TMUX}" -V`
+if [ "$TMUX_VERSION" &gt; "tmux 1.4" ]
+then
+	${TM_TMUX} load-buffer "$TMP"
+	${TM_TMUX} paste-buffer	
+else
+	${TM_TMUX} load-buffer -t $CL_SESSION_NAME "$TMP"
+	${TM_TMUX} paste-buffer
+fi
+</string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^@Z</string>
 	<key>name</key>
 	<string>Stuff Control-D</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
 	<string>D449F94D-6F8A-43A4-97D9-97D57760DD7E</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

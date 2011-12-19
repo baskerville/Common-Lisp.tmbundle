@@ -5,11 +5,14 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>ACTIVE_SESSIONS=`tmux list-sessions | grep "$CL_SESSION_NAME"`
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+ACTIVE_SESSIONS=`"${TM_TMUX}" list-sessions | grep "$CL_SESSION_NAME"`
 
 if [ -n "$ACTIVE_SESSIONS" ]
 then
-	tmux kill-session -t "$CL_SESSION_NAME"
+	${TM_TMUX} kill-session -t "$CL_SESSION_NAME"
 	growl "Sayonara!"
 else
 	growl "Nothing to Kill…"
@@ -17,15 +20,23 @@ fi
 </string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^@^</string>
 	<key>name</key>
 	<string>Kill Session</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
 	<string>E5E50719-633D-4128-8062-C4AC0A8726A9</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

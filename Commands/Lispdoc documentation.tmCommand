@@ -8,25 +8,26 @@
 	<string>#!/usr/bin/env bash
 [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
-${TM_TMUX} list-clients | grep "$CL_SESSION_NAME" | awk -F : '{print $1}' | xargs -I % ${TM_TMUX} detach-client -t %</string>
+read SYMBOL
+echo "&lt;meta http-equiv=\"refresh\" content=\"0; http://lispdoc.com/?q=$SYMBOL&amp;search=Basic+search\"&gt;"
+
+</string>
 	<key>input</key>
-	<string>none</string>
+	<string>selection</string>
 	<key>inputFormat</key>
 	<string>text</string>
-	<key>keyEquivalent</key>
-	<string>^@&lt;</string>
 	<key>name</key>
-	<string>Detach from Session</string>
+	<string>Lispdoc documentation</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
-	<string>text</string>
+	<string>html</string>
 	<key>outputLocation</key>
-	<string>discard</string>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>source.lisp</string>
 	<key>uuid</key>
-	<string>DA68016A-B313-44EF-A680-CEC7585C04FD</string>
+	<string>F5808B48-6E26-48E2-8F88-45C4240F0A38</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>

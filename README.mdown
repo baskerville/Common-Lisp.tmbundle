@@ -1,15 +1,29 @@
 # Common Lisp TextMate Bundle
 
+![Screen 1](https://github.com/CharlesStain/Common-Lisp.tmbundle/raw/master/screen1.png)
+
+This is a slightly enhancement to the fantastic Common Lisp Bundle, originary written by Bastien Dejean.
+It supports Textmate 2, so you can code with your favourite editor and your favourite programming language :)
+I can't assure the backward compatibility, so if you want a fully functional bundle for TM1, use the Bastien version.
+Although TM2 is supported, from TM2 seems to have disappeared the Plugin folder, so I don't know how to install the
+Bastien Flexible Words plugin. Probably you won't be able to use all the code introspection commands of the original bundle.
+
 ## Requirements
 
-* tmux
-* rlwrap
+* [tmux](http://tmux.sourceforge.net/)
+* [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/#rlwrap)
 * [SBCL](http://www.sbcl.org/)
 * [Growl](http://growl.info/)
-* [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://code.google.com/p/iterm2/)
+* [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://www.iterm2.com/)
 * [Flexible Words TextMate Plugin](http://github.com/baskerville/Flexible-Words-TextMate)
 
 ## Manual Steps
+
+You NEED to add these environment variable to your TM2 installation "Preferences -> Environment Variables":
+
+* TM_TMUX : "tmux_path", for example /usr/local/bin/tmux
+* TM_SBCL : "sbcl_path", for example /usr/local/bin/sbcl
+* TM_RLWRAP : "rlwrap_path", for example /user/local/bin/rlwrap
 	
 Needed by *completionCommand* :
 
