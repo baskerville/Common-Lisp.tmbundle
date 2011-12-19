@@ -10,8 +10,8 @@ Bastien Flexible Words plugin. Probably you won't be able to use all the code in
 
 ## Requirements
 
-* tmux
-* rlwrap
+* [tmux](http://tmux.sourceforge.net/)
+* [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/#rlwrap)
 * [SBCL](http://www.sbcl.org/)
 * [Growl](http://growl.info/)
 * [iTerm](http://iterm.sourceforge.net/) or [iTerm2](http://www.iterm2.com/)
